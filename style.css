@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+}
+
+
+
+.photo-display {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto preencha o contêiner sem distorcer */
+    transition: opacity 0.1s ease-in-out; /* Adiciona uma transição suave na mudança */
+}
+
+
+/* Novo contêiner pai para controlar o posicionamento */
+.super-container {
+    width: 500px;
+    height: 500px;
+    position: relative; /* Ponto de referência para os elementos absolutos */
+}
+
+/* Contêiner das fotos */
+.container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Fica por baixo do SVG */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+
+/* Contêiner do SVG, que ficará por cima */
+.svg-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; /* Fica por cima do contêiner das fotos */
+    pointer-events: none; /* MUITO IMPORTANTE! Permite que os eventos do mouse passem através do SVG para a imagem de baixo */
+}
+
+/* A imagem SVG em si */
+.svg-overlay img {
+    width: 100%;
+    height: 100%;
+    display: block; /* Remove espaços extras */
+}
