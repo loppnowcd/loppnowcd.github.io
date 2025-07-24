@@ -36,7 +36,7 @@ function startSequence() {
         // Incrementa o índice. Se chegar ao fim da lista, ele volta para o início.
         photoIndex = (photoIndex + 1) % photos.length;
         
-    }, 300); // 300 milissegundos = 0.3 segundos
+    }, 400); // 400 milissegundos = 0.4 segundos
 }
 
 // Função para parar a sequência e voltar para a foto inicial ao retirar o mouse
