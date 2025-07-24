@@ -46,21 +46,22 @@ function stopSequence() {
         intervalId = null;
     }
 
-    // Aguarda um tempo com a última imagem (ex: 400ms)
+    // Aguarda um tempo com a última imagem da sequência
     setTimeout(() => {
-        // Adiciona o efeito de flash
-        mainPhoto.classList.add('flash-effect');
+        // Troca para a imagem inicial (sua foto)
+        mainPhoto.src = initialPhoto;
 
-        // Troca pra imagem original (sua foto) logo após o início do flash
+        // Depois de um pequeno delay, aplica o efeito de flash
         setTimeout(() => {
-            mainPhoto.src = initialPhoto;
-        }, 100); // Espera um pouquinho antes de mudar a imagem
+            mainPhoto.classList.add('flash-effect');
 
-        // Remove a classe de flash após a animação terminar (evita acúmulo de classes)
-        setTimeout(() => {
-            mainPhoto.classList.remove('flash-effect');
-        }, 400);
-    }, 400); // Espera um pouco antes de começar o flash
+            // Remove o flash após a animação
+            setTimeout(() => {
+                mainPhoto.classList.remove('flash-effect');
+            }, 400); // Duração do flash
+
+        }, 50); // Um pequeno atraso para dar tempo de a imagem carregar
+    }, 400); // Espera após o mouse sair
 }
 
 // Eventos de mouse para o contêiner
