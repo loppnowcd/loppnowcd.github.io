@@ -22,6 +22,7 @@ body {
 .super-container {
     width: 500px;
     height: 500px;
+    aspect-ratio: 1 / 1; 
     position: relative; /* Ponto de referência para os elementos absolutos */
 }
 
@@ -71,5 +72,29 @@ body {
     }
     100% {
         filter: brightness(1);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .super-container {
+        max-width: 90vw;
+    }
+
+    .photo-display {
+        object-fit: cover;
+    }
+
+    h1, h2, p, button {
+        text-align: center;
+        font-size: 4vw; /* adapta o tamanho da fonte ao tamanho da tela */
+    }
+
+    .svg-overlay img {
+        object-fit: contain;
     }
 }
