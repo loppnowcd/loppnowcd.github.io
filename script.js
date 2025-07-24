@@ -41,15 +41,26 @@ function startSequence() {
 
 // Função para parar a sequência e voltar para a foto inicial ao retirar o mouse
 function stopSequence() {
-    // Limpa o temporizador, se ele estiver rodando
     if (intervalId) {
         clearInterval(intervalId);
-        intervalId = null; // Zera a variável para que a próxima entrada de mouse possa iniciar um novo temporizador
+        intervalId = null;
     }
 
-    // AQUI ESTÁ A LINHA CRUCIAL:
-    // Volta a exibir a foto inicial ('foto-a.jpg')
-    mainPhoto.src = initialPhoto;
+    // Aguarda um tempo com a última imagem (ex: 400ms)
+    setTimeout(() => {
+        // Adiciona o efeito de flash
+        mainPhoto.classList.add('flash-effect');
+
+        // Troca pra imagem original (sua foto) logo após o início do flash
+        setTimeout(() => {
+            mainPhoto.src = initialPhoto;
+        }, 100); // Espera um pouquinho antes de mudar a imagem
+
+        // Remove a classe de flash após a animação terminar (evita acúmulo de classes)
+        setTimeout(() => {
+            mainPhoto.classList.remove('flash-effect');
+        }, 400);
+    }, 400); // Espera um pouco antes de começar o flash
 }
 
 // Eventos de mouse para o contêiner
