@@ -38,7 +38,10 @@ body {
     cursor: pointer;
 }
 
-
+img.photo-display {
+    max-width: 100%;
+    height: auto;
+}
 
 /* Contêiner do SVG, que ficará por cima */
 .svg-overlay {
