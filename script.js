@@ -1,9 +1,9 @@
-// Referências aos elementos HTML
+// referências aos elementos HTML
 const container = document.getElementById('image-container');
 const mainPhoto = document.getElementById('main-photo');
 
-// Lista de fotos que serão exibidas em sequência
-// Importante: Certifique-se de que os nomes dos arquivos estão corretos
+// lista de fotos que serão exibidas em sequência
+// importante: certificar-se de que os nomes dos arquivos estão corretos
 const photos = [
     'imagens/image2purplesky.jpeg',
     'imagens/image3greenleaves.jpeg',
