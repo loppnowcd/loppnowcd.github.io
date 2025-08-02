@@ -14,7 +14,7 @@ const photos = [
     'imagens/image5zodiac.jpg',
 ];
 
-let intervalId; // Variável para armazenar o ID do temporizador (para poder parar depois)
+let intervalId; // variavel para armazenar o ID do temporizador (para poder parar depois)
 let photoIndex = 0; // Índice da foto atual na lista
 
 // Nome da foto inicial que você quer que apareça quando o mouse for retirado
